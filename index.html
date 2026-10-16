@@ -1,0 +1,1042 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nearhelpers | Your Needs, Your Neighbours, Trusted Help</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style/main.css" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./script/tailwindConfig.js"></script>
+  </head>
+
+  <body
+    class="bg-[#fcfdfd] text-slate-800 font-sans antialiased selection:bg-brand-600 selection:text-white"
+  >
+    <!-- Header / Navigation -->
+    <header
+      class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+      >
+        <!-- Brand Logo -->
+        <a href="#" class="w-1/5 items-center gap-3 group focus:outline-none">
+          <!-- SVG recreation of uploaded Nearhelpers circular logo -->
+          <img
+            src="./assets/logo-horizontal-blue.png"
+            alt="Nearhelpers Logo"
+            class="w-full max-w-52"
+          />
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav
+          class="hidden md:flex items-center gap-8 text-[15px] font-semibold text-slate-600"
+        >
+          <a
+            href="#home"
+            class="text-brand-600 hover:text-brand-700 transition"
+            onclick="updateActiveMenu(this)"
+            >Home</a
+          >
+          <a
+            href="#services"
+            class="hover:text-brand-600 transition"
+            onclick="updateActiveMenu(this)"
+            >Our Services</a
+          >
+          <a
+            href="#why-us"
+            class="hover:text-brand-600 transition"
+            onclick="updateActiveMenu(this)"
+            >Why Us</a
+          >
+          <a
+            href="#how-it-works"
+            class="hover:text-brand-600 transition"
+            onclick="updateActiveMenu(this)"
+          >
+            How It Works</a
+          >
+          <a
+            href="#contact"
+            class="hover:text-brand-600 transition"
+            onclick="updateActiveMenu(this)"
+            >Contact Us</a
+          >
+        </nav>
+
+        <!-- Desktop CTA Actions -->
+        <div class="hidden md:flex items-center gap-3">
+          <button
+            onclick="openBookingModal('General Enquiry')"
+            class="px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-300 to-emerald-400 hover:from-emerald-400 hover:to-emerald-500 text-white font-semibold shadow-md shadow-emerald-300/25 text-sm transition-all hover:shadow-lg hover:-translate-y-0.5"
+          >
+            Book Now
+          </button>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <div class="flex md:hidden items-center gap-2">
+          <button
+            onclick="openBookingModal()"
+            class="px-3 py-1.5 rounded-full bg-amber-500 text-white text-xs font-bold"
+          >
+            Book Now
+          </button>
+          <button
+            id="menu-toggle-btn"
+            onclick="toggleMobileMenu()"
+            class="p-2 text-slate-600 hover:text-slate-900 focus:outline-none"
+            aria-label="Toggle Menu"
+          >
+            <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-5 shadow-xl transition-all"
+      >
+        <div
+          class="flex flex-col space-y-4 font-semibold text-slate-700 text-base"
+        >
+          <a href="#home" onclick="toggleMobileMenu()" class="text-brand-600"
+            >Home</a
+          >
+          <a
+            href="#services"
+            onclick="toggleMobileMenu()"
+            class="hover:text-brand-600"
+            >Our Services</a
+          >
+          <a
+            href="#why-us"
+            onclick="toggleMobileMenu()"
+            class="hover:text-brand-600"
+            >Why Us</a
+          >
+          <a
+            href="#how-it-works"
+            onclick="toggleMobileMenu()"
+            class="hover:text-brand-600"
+            >How It Works</a
+          >
+          <a
+            href="#contact"
+            onclick="toggleMobileMenu()"
+            class="hover:text-brand-600"
+            >Contact Us</a
+          >
+          <div class="pt-2 border-t border-slate-100 flex flex-col gap-2">
+            <a
+              href="https://wa.me/919633453183?text=Hello%20Nearhelpers,%20I%20need%20assistance%20in%20Adoor"
+              target="_blank"
+              class="w-full text-center py-2.5 rounded-xl bg-emerald-600 text-white font-semibold flex items-center justify-center gap-2"
+            >
+              <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="relative pt-8 pb-8 md:pt-14 md:pb-8 overflow-hidden bg-gradient-to-b from-blue-50/70 via-white to-white"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Top Pill Tagline -->
+        <div class="flex justify-center md:justify-start mb-6">
+          <span
+            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100/80 border border-blue-200 text-brand-700 text-xs sm:text-sm font-bold tracking-wide"
+          >
+            <i class="fa-solid fa-heart-circle-check text-brand-600"></i>
+            Your needs, your neighbours, trusted help
+          </span>
+        </div>
+
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center"
+        >
+          <!-- Left Content -->
+          <div class="lg:col-span-7 text-center md:text-left space-y-6">
+            <h1
+              class="text-3xl sm:text-5xl lg:text-[54px] font-extrabold text-slate-900 tracking-tight leading-[1.18]"
+            >
+              With you in
+              <span
+                class="text-brand-600 underline decoration-amber-400 decoration-wavy decoration-2 underline-offset-4"
+                >Adoor</span
+              >, for anything you need!
+            </h1>
+
+            <p
+              class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal"
+            >
+              Too busy to handle things at home? Worried about your parents back
+              home while you're abroad?
+              <span class="font-semibold text-slate-800"
+                >Don't worry anymore.</span
+              >
+              Our trusted local helpers are right by your side.
+            </p>
+
+            <!-- Action Buttons -->
+            <div
+              class="flex flex-col sm:flex-row items-center gap-4 pt-2 justify-center md:justify-start"
+            >
+              <a
+                href="https://wa.me/919633453183?text=Hello%20Nearhelpers,%20I%20would%20like%20to%20book%20a%20helper%20in%20Adoor."
+                target="_blank"
+                class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-base shadow-lg shadow-brand-600/30 flex items-center justify-center gap-2.5 transition-all hover:-translate-y-0.5"
+              >
+                <i class="fa-brands fa-whatsapp text-xl text-emerald-300"></i>
+                Book on WhatsApp
+              </a>
+
+              <a
+                href="#services"
+                class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-base transition-all flex items-center justify-center gap-2 border border-slate-200"
+              >
+                <span>Explore Services</span>
+                <i class="fa-solid fa-arrow-down text-sm"></i>
+              </a>
+            </div>
+
+            <!-- Micro Trust indicators -->
+            <div
+              class="pt-4 flex flex-wrap items-center justify-center md:justify-start gap-5 text-xs sm:text-sm text-slate-500 font-medium"
+            >
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                <span>Police / Identity Verified</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                <span>Live Photo & GPS Updates</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                <span>Native Malayalam Speakers</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Hero Illustration & Care Card (Matching the Reference Photo composition) -->
+          <div class="lg:col-span-5 relative">
+            <div
+              class="relative mx-auto max-w-md lg:max-w-none rounded-3xl overflow-hidden bg-gradient-to-tr from-amber-50 via-blue-50 to-emerald-50 p-2 shadow-2xl border border-slate-100"
+            >
+              <!-- Graphic Illustration Container -->
+              <div
+                class="relative rounded-2xl overflow-hidden bg-white shadow-inner aspect-[4/3] sm:aspect-[16/11]"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=900&q=80"
+                  alt="Caregiver companion assisting elderly family members at home in Kerala"
+                  class="w-full h-full object-cover"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/600x450/e0f2fe/0369a1?text=Friendly+Local+Caregiver+in+Adoor'
+                  "
+                />
+
+                <!-- Subtle overlay gradient -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"
+                ></div>
+
+                <!-- Floating helper badge on the image -->
+                <div
+                  class="absolute bottom-4 left-4 right-4 glass-card p-3 sm:p-4 rounded-xl shadow-lg border border-white/60 flex items-center gap-3 bg-blue-100/80"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0"
+                  >
+                    <i class="fa-solid fa-shield-heart text-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs sm:text-sm font-bold text-slate-900">
+                      Family Assistance in Adoor
+                    </h4>
+                    <p class="text-[11px] sm:text-xs text-slate-500">
+                      From hospital visits to house management
+                    </p>
+                  </div>
+                  <div
+                    class="ml-auto text-emerald-600 font-bold text-xs bg-emerald-50 px-2.5 py-1 rounded-full shrink-0"
+                  >
+                    Active
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating NRI Peace-of-Mind Pill -->
+              <div
+                class="absolute top-0 right-1 bg-white px-4 py-2 rounded-2xl shadow-xl border border-blue-100 flex items-center gap-2 pulse-soft"
+              >
+                <span
+                  class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"
+                ></span>
+                <span class="text-xs font-bold text-slate-800"
+                  >100% NRI Friendly</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 pb-0 md:py-24 bg-white relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <span
+            class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-brand-600 bg-brand-50 px-3 py-1 rounded-full"
+            >Services</span
+          >
+          <h2
+            class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-3"
+          >
+            Our services
+          </h2>
+          <p class="text-base sm:text-lg text-slate-600 font-medium">
+            Or any help you'd ask a friend for!
+          </p>
+        </div>
+
+        <!-- 5 Interactive Service Cards matching the prompt -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          <!-- Service 1: Hospital bystander & medicine delivery -->
+          <div
+            class="group bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:shadow-pop hover:border-brand-500 transition-all duration-300 flex flex-col items-center text-center"
+          >
+            <div
+              class="w-16 h-16 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-rose-600 group-hover:text-white transition-all duration-300"
+            >
+              <i class="fa-solid fa-notes-medical text-2xl"></i>
+            </div>
+            <h3
+              class="font-bold text-slate-900 text-base leading-snug mb-2 group-hover:text-brand-600 transition-colors"
+            >
+              Hospital bystander & medicine delivery
+            </h3>
+            <p class="text-xs text-slate-500 leading-relaxed mb-4">
+              Patient accompaniment, doctor visit assistance, prescription
+              pick-up & pharmacy drops.
+            </p>
+            <button
+              onclick="openBookingModal('Hospital Bystander & Medicine')"
+              class="mt-auto text-xs font-bold text-brand-600 group-hover:text-brand-700 flex items-center gap-1.5"
+            >
+              Book Service <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+          </div>
+
+          <!-- Service 2: Support for elderly parents -->
+          <div
+            class="group bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:shadow-pop hover:border-brand-500 transition-all duration-300 flex flex-col items-center text-center"
+          >
+            <div
+              class="w-16 h-16 rounded-2xl bg-blue-50 text-brand-600 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-brand-600 group-hover:text-white transition-all duration-300"
+            >
+              <i class="fa-solid fa-person-cane text-2xl"></i>
+            </div>
+            <h3
+              class="font-bold text-slate-900 text-base leading-snug mb-2 group-hover:text-brand-600 transition-colors"
+            >
+              Support for elderly parents
+            </h3>
+            <p class="text-xs text-slate-500 leading-relaxed mb-4">
+              Daily check-ins, companionship, clinic commutes, bill payments,
+              and empathetic physical care.
+            </p>
+            <button
+              onclick="openBookingModal('Elderly Parents Support')"
+              class="mt-auto text-xs font-bold text-brand-600 group-hover:text-brand-700 flex items-center gap-1.5"
+            >
+              Book Service <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+          </div>
+
+          <!-- Service 3: Bank and office errands -->
+          <div
+            class="group bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:shadow-pop hover:border-brand-500 transition-all duration-300 flex flex-col items-center text-center"
+          >
+            <div
+              class="w-16 h-16 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300"
+            >
+              <i class="fa-solid fa-building-columns text-2xl"></i>
+            </div>
+            <h3
+              class="font-bold text-slate-900 text-base leading-snug mb-2 group-hover:text-brand-600 transition-colors"
+            >
+              Bank and office errands
+            </h3>
+            <p class="text-xs text-slate-500 leading-relaxed mb-4">
+              Village office document work, postal couriers, pension
+              verification & utility clearance.
+            </p>
+            <button
+              onclick="openBookingModal('Bank and Office Errands')"
+              class="mt-auto text-xs font-bold text-brand-600 group-hover:text-brand-700 flex items-center gap-1.5"
+            >
+              Book Service <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+          </div>
+
+          <!-- Service 4: Shopping, pickups, deliveries, and driving -->
+          <div
+            class="group bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:shadow-pop hover:border-brand-500 transition-all duration-300 flex flex-col items-center text-center"
+          >
+            <div
+              class="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300"
+            >
+              <i class="fa-solid fa-cart-flatbed-suitcase text-2xl"></i>
+            </div>
+            <h3
+              class="font-bold text-slate-900 text-base leading-snug mb-2 group-hover:text-brand-600 transition-colors"
+            >
+              Shopping, pickups, deliveries & driving
+            </h3>
+            <p class="text-xs text-slate-500 leading-relaxed mb-4">
+              Vegetable & grocery shopping, railway/airport parcel drops, and
+              on-demand personal driving.
+            </p>
+            <button
+              onclick="openBookingModal('Shopping and Driving Delivery')"
+              class="mt-auto text-xs font-bold text-brand-600 group-hover:text-brand-700 flex items-center gap-1.5"
+            >
+              Book Service <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+          </div>
+
+          <!-- Service 5: House shifting and repair supervision -->
+          <div
+            class="group bg-white rounded-2xl p-6 border border-slate-200/90 shadow-card hover:shadow-pop hover:border-brand-500 transition-all duration-300 flex flex-col items-center text-center"
+          >
+            <div
+              class="w-16 h-16 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300"
+            >
+              <i class="fa-solid fa-toolbox text-2xl"></i>
+            </div>
+            <h3
+              class="font-bold text-slate-900 text-base leading-snug mb-2 group-hover:text-brand-600 transition-colors"
+            >
+              House shifting & repair supervision
+            </h3>
+            <p class="text-xs text-slate-500 leading-relaxed mb-4">
+              On-site supervision of plumbing, carpentry, cleaning, and house
+              moving when you are away.
+            </p>
+            <button
+              onclick="openBookingModal('House Shifting & Repair Supervision')"
+              class="mt-auto text-xs font-bold text-brand-600 group-hover:text-brand-700 flex items-center gap-1.5"
+            >
+              Book Service <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Custom Help Callout -->
+        <div
+          class="mt-10 p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center shrink-0"
+            >
+              <i class="fa-regular fa-comments text-lg"></i>
+            </div>
+            <p class="text-sm text-slate-700 font-medium">
+              Need something unique not listed here? We accommodate special
+              custom requests in and around Adoor.
+            </p>
+          </div>
+          <button
+            onclick="openBookingModal('Custom Special Request')"
+            class="px-5 py-2 rounded-lg bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold whitespace-nowrap"
+          >
+            Ask for Custom Help
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Nearhelpers Section (Design matched with soft tinted pastel cards) -->
+    <section
+      id="why-us"
+      class="py-24 md:py-24 bg-slate-50/70 border-y border-slate-100"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2
+            class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
+          >
+            Why Nearhelpers?
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base mt-2">
+            Built with trust, local roots, and accountability for families near
+            and far.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Why 1: Trusted local helpers (Soft Peach/Orange tint) -->
+          <div
+            class="bg-[#FFF4EC] rounded-2xl p-6 border border-amber-200/50 flex flex-col items-center text-center shadow-sm hover:shadow-md transition"
+          >
+            <div
+              class="w-16 h-16 rounded-2xl bg-amber-100/90 text-amber-700 flex items-center justify-center mb-4 text-2xl shadow-inner"
+            >
+              <i class="fa-solid fa-handshake-angle"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg mb-1.5">
+              Trusted local helpers
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Background verified community members from Adoor who treat your
+              family like their own.
+            </p>
+          </div>
+
+          <!-- Why 2: Live updates on WhatsApp (Soft Emerald/Mint tint) -->
+          <div
+            class="bg-[#EBFBF4] rounded-2xl p-6 border border-emerald-200/50 flex flex-col items-center text-center shadow-sm hover:shadow-md transition"
+          >
+            <div
+              class="w-16 h-16 rounded-2xl bg-emerald-100/90 text-emerald-600 flex items-center justify-center mb-4 text-2xl shadow-inner"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg mb-1.5">
+              Live updates on WhatsApp
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Real-time photos, receipts, audio notes, and instant location
+              pings right to your phone.
+            </p>
+          </div>
+
+          <!-- Why 3: Hourly booking (Soft Warm Yellow tint) -->
+          <div
+            class="bg-[#FEF9E7] rounded-2xl p-6 border border-amber-200/60 flex flex-col items-center text-center shadow-sm hover:shadow-md transition"
+          >
+            <div
+              class="w-16 h-16 rounded-2xl bg-amber-100/90 text-amber-700 flex items-center justify-center mb-4 text-2xl shadow-inner"
+            >
+              <i class="fa-solid fa-clock-rotate-left"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg mb-1.5">
+              Hourly booking
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Pay only for the time you need. No monthly lock-ins, transparent
+              rates, starting from just 1 hour.
+            </p>
+          </div>
+
+          <!-- Why 4: Complete peace of mind (Soft Rose/Pink tint) -->
+          <div
+            class="bg-[#FDEEF1] rounded-2xl p-6 border border-rose-200/50 flex flex-col items-center text-center shadow-sm hover:shadow-md transition"
+          >
+            <div
+              class="w-16 h-16 rounded-2xl bg-rose-100/90 text-rose-600 flex items-center justify-center mb-4 text-2xl shadow-inner"
+            >
+              <i class="fa-solid fa-face-smile-beam"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg mb-1.5">
+              Complete peace of mind
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Specially tailored for non-resident Keralites (NRIs) wanting
+              absolute safety for back-home duties.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-24 pb-8 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span
+            class="text-xs font-bold text-brand-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full"
+            >Simple 3-Step Process</span
+          >
+          <h2 class="text-3xl font-extrabold text-slate-900 mt-2">
+            How it works
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+          <div
+            class="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 text-center relative"
+          >
+            <div
+              class="w-12 h-12 rounded-full bg-brand-600 text-white font-extrabold flex items-center justify-center mx-auto mb-4 text-lg"
+            >
+              1
+            </div>
+            <h4 class="font-bold text-slate-900 mb-2">Tell Us What You Need</h4>
+            <p class="text-xs text-slate-500">
+              Send a WhatsApp message with the task details, date, and preferred
+              duration in Adoor.
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 text-center relative"
+          >
+            <div
+              class="w-12 h-12 rounded-full bg-brand-600 text-white font-extrabold flex items-center justify-center mx-auto mb-4 text-lg"
+            >
+              2
+            </div>
+            <h4 class="font-bold text-slate-900 mb-2">Helper Assigned</h4>
+            <p class="text-xs text-slate-500">
+              A verified local helper confirms details with you or your family
+              member directly.
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 text-center relative"
+          >
+            <div
+              class="w-12 h-12 rounded-full bg-brand-600 text-white font-extrabold flex items-center justify-center mx-auto mb-4 text-lg"
+            >
+              3
+            </div>
+            <h4 class="font-bold text-slate-900 mb-2">Live WhatsApp Updates</h4>
+            <p class="text-xs text-slate-500">
+              Receive photos, receipts, task completion status, and pay safely
+              post-service.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Book Floating / Embedded Banner Card (Directly based on reference UI) -->
+    <section id="contact" class="py-24 pb-12 bg-white">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div
+          class="bg-gradient-to-r from-[#0c5982] via-[#0268a6] to-[#0277fa] rounded-3xl p-6 sm:p-8 md:p-10 text-white shadow-2xl relative overflow-hidden"
+        >
+          <!-- Decorative circular watermark inside banner matching logo -->
+          <div
+            class="absolute -right-16 -bottom-16 w-64 h-64 rounded-full bg-white/5 pointer-events-none"
+          ></div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <!-- Left Call/WhatsApp Info -->
+            <div class="md:col-span-8 space-y-4">
+              <div
+                class="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-xs font-semibold text-blue-100 backdrop-blur-sm"
+              >
+                <i class="fa-solid fa-location-dot text-blue-300"></i> Serving
+                Adoor & Neighbourhood
+              </div>
+
+              <h3
+                class="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight"
+              >
+                Contact & Book Your Local Helper
+              </h3>
+
+              <p
+                class="text-blue-100 text-sm sm:text-base font-normal max-w-xl"
+              >
+                Call or WhatsApp for quick bookings, custom requests, and
+                enquiries:
+              </p>
+
+              <div class="flex flex-col sm:flex-row sm:items-center gap-4 pt-1">
+                <!-- Phone Number Pill -->
+                <a
+                  href="tel:+919633453183"
+                  class="text-xl sm:text-2xl font-black tracking-wide text-blue-300 hover:text-white transition flex items-center gap-3"
+                >
+                  <span
+                    class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-sm"
+                    ><i class="fa-solid fa-phone"></i
+                  ></span>
+                  +91 96334 53183
+                </a>
+
+                <!-- Book on WhatsApp Button -->
+                <a
+                  href="https://wa.me/919633453183?text=Hello%20Nearhelpers,%20I%20want%20to%20book%20a%20helper%20in%20Adoor."
+                  target="_blank"
+                  class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-emerald-300 to-emerald-400 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold text-sm shadow-lg shadow-black/20 hover:scale-105 transition-all"
+                >
+                  <i class="fa-brands fa-whatsapp text-lg"></i>
+                  Book on WhatsApp
+                </a>
+              </div>
+            </div>
+
+            <!-- Right QR Code Scan Block (Exact visual feature from the design) -->
+            <div
+              class="md:col-span-4 flex flex-col items-center md:items-end text-center md:text-right"
+            >
+              <span
+                class="text-xs font-bold text-blue-200 mb-2 uppercase tracking-wider"
+                >Scan to chat on WhatsApp</span
+              >
+
+              <div
+                class="p-3 bg-white rounded-2xl shadow-xl w-36 h-36 flex flex-col items-center justify-center border border-white/80 group"
+              >
+                <img
+                  src="./assets/whatsapp-qr.jpg"
+                  alt="WhatsApp QR Code for Nearhelpers"
+                  class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+
+              <a
+                href="https://wa.me/919633453183"
+                target="_blank"
+                class="mt-2 text-[11px] text-blue-200 underline hover:text-white"
+              >
+                Or tap here to launch chat
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modern Footer -->
+    <footer
+      class="bg-slate-900 text-slate-400 text-sm border-t border-slate-800 pt-14 pb-8"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800"
+        >
+          <!-- Col 1: About & Logo -->
+          <div class="space-y-4 md:col-span-1">
+            <div class="flex items-center gap-3">
+              <img
+                src="./assets/logo-horizontal-white.png"
+                alt="Nearhelpers Logo"
+                class="max-w-52 w-full object-cover"
+              />
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Your trusted neighbourly companion in Adoor for any help. Safe,
+              verified, and transparent on-demand task assistance.
+            </p>
+            <div class="flex items-center gap-3 text-slate-400 pt-2">
+              <a
+                href="https://www.facebook.com/share/1JyLBimVtz/"
+                target="_blank"
+                class="w-8 h-8 rounded-full bg-slate-800 hover:bg-brand-600 hover:text-white flex items-center justify-center transition"
+                ><i class="fa-brands fa-facebook-f text-xs"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/near.helpers?exln=b2xoZGxwOTRvcG5l"
+                target="_blank"
+                class="w-8 h-8 rounded-full bg-slate-800 hover:bg-gradient-to-b from-[#833AB4] via-[#C13584] to-[#F77737] hover:text-white flex items-center justify-center transition"
+                ><i class="fa-brands fa-instagram text-xs"></i
+              ></a>
+              <a
+                href="https://wa.me/919633453183?text=Hello%20Nearhelpers,%20I%20want%20to%20book%20a%20helper%20in%20Adoor."
+                target="_blank"
+                class="w-8 h-8 rounded-full bg-slate-800 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition"
+                ><i class="fa-brands fa-whatsapp text-xs"></i
+              ></a>
+              <a
+                href="https://youtube.com/@nearhelpers?si=_n8sljSDfgBbCc1f"
+                target="_blank"
+                class="w-8 h-8 rounded-full bg-slate-800 hover:bg-red-600 hover:text-white flex items-center justify-center transition"
+                ><i class="fa-brands fa-youtube text-xs"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Col 2: Services -->
+          <div>
+            <h4
+              class="font-bold text-white mb-4 text-xs tracking-wider uppercase"
+            >
+              Our Services
+            </h4>
+            <ul class="space-y-2.5 text-xs">
+              <li>
+                <a href="#services" class="hover:text-white transition"
+                  >Hospital Bystander</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="hover:text-white transition"
+                  >Senior Parent Care</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="hover:text-white transition"
+                  >Medicine Home Delivery</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="hover:text-white transition"
+                  >Office & Bank Works</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="hover:text-white transition"
+                  >House Shifting Assistance</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Coverage Areas -->
+          <div>
+            <h4
+              class="font-bold text-white mb-4 text-xs tracking-wider uppercase"
+            >
+              Service Coverage
+            </h4>
+            <p class="text-xs text-slate-400 leading-relaxed mb-3">
+              Promptly serving families and properties across:
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 text-[11px]"
+                >Adoor Town</span
+              >
+              <span
+                class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 text-[11px]"
+                >Parakode</span
+              >
+              <span
+                class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 text-[11px]"
+                >Kadampanad</span
+              >
+              <span
+                class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 text-[11px]"
+                >Ezhamkulam</span
+              >
+              <span
+                class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 text-[11px]"
+                >Pandalam</span
+              >
+            </div>
+          </div>
+
+          <!-- Col 4: Quick Contact -->
+          <div>
+            <h4
+              class="font-bold text-white mb-4 text-xs tracking-wider uppercase"
+            >
+              Direct Contact
+            </h4>
+            <ul class="space-y-2 text-xs">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-phone text-brand-500"></i>
+                <span>+91 96334 53183</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-envelope text-brand-500"></i>
+                <span>nearhelpers@gmail.com</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-brand-500"></i>
+                <span
+                  >Kaithavana Anugraha Building, High school junction, Adoor,
+                  Pathanamthitta, Kerala</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Copyright & Disclaimer -->
+        <div
+          class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4"
+        >
+          <p>
+            © 2026 Nearhelpers. All rights reserved. Connecting trusted
+            neighbours.
+          </p>
+          <p>
+            Built with care for families in Adoor & our Malayali friends abroad.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Booking / Quick Enquiry Modal Dialog (Safe replacement for alerts) -->
+    <div
+      id="booking-modal"
+      class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-200"
+    >
+      <div
+        class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl transform scale-95 transition-transform duration-200"
+        id="booking-modal-card"
+      >
+        <div
+          class="flex items-center justify-between pb-4 border-b border-slate-100"
+        >
+          <div class="flex items-center gap-2.5">
+            <div
+              class="w-9 h-9 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center font-bold"
+            >
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 text-lg">Book Nearhelpers</h3>
+              <p class="text-xs text-slate-400">Trusted hourly help in Adoor</p>
+            </div>
+          </div>
+          <button
+            onclick="closeBookingModal()"
+            class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <form
+          id="booking-form"
+          onsubmit="handleBookingSubmit(event)"
+          class="mt-5 space-y-4"
+        >
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1"
+              >Select Service</label
+            >
+            <select
+              id="modal-service-select"
+              class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-600 text-sm"
+            >
+              <option value="Hospital bystander & medicine delivery">
+                Hospital bystander & medicine delivery
+              </option>
+              <option value="Support for elderly parents">
+                Support for elderly parents
+              </option>
+              <option value="Bank and office errands">
+                Bank and office errands
+              </option>
+              <option value="Shopping, pickups, deliveries, and driving">
+                Shopping, pickups, deliveries, and driving
+              </option>
+              <option value="House shifting and repair supervision">
+                House shifting and repair supervision
+              </option>
+              <option value="Custom / Other Assistance">
+                Custom / Other Assistance
+              </option>
+            </select>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label
+                class="block text-xs font-bold text-slate-700 uppercase mb-1"
+                >Your Name</label
+              >
+              <input
+                type="text"
+                required
+                placeholder="e.g. Rahul Nair"
+                class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-600 text-sm"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-xs font-bold text-slate-700 uppercase mb-1"
+                >WhatsApp Number</label
+              >
+              <input
+                type="tel"
+                required
+                placeholder="+91 or Overseas number"
+                class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-600 text-sm"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1"
+              >Locality in/near Adoor</label
+            >
+            <input
+              type="text"
+              placeholder="e.g. Parakode, Central Adoor, Ezhamkulam"
+              class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-600 text-sm"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1"
+              >Task Details</label
+            >
+            <textarea
+              rows="3"
+              placeholder="Tell us what you need help with and for approximately how many hours..."
+              class="w-full px-4 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-600 text-sm"
+            ></textarea>
+          </div>
+
+          <div
+            id="modal-feedback"
+            class="hidden text-xs font-semibold p-3 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200"
+          >
+            Request prepared! Redirecting to WhatsApp for instant
+            confirmation...
+          </div>
+
+          <div class="pt-2 flex gap-3">
+            <button
+              type="button"
+              onclick="closeBookingModal()"
+              class="w-1/2 py-2.5 rounded-xl border border-slate-200 text-slate-600 font-bold text-sm hover:bg-slate-50 transition"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="w-1/2 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md shadow-brand-600/30 transition flex items-center justify-center gap-2"
+            >
+              <i class="fa-brands fa-whatsapp"></i> Confirm & Chat
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="./script/main.js"></script>
+  </body>
+</html>
