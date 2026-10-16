@@ -1,0 +1,25 @@
+/* Custom utility animations */
+@keyframes pulseSoft {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+.pulse-soft {
+  animation: pulseSoft 3s ease-in-out infinite;
+}
+.glass-card {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+}
+/* Logo styling match with uploaded image */
+.brand-n-curve {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 14;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
