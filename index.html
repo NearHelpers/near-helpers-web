@@ -33,18 +33,18 @@
   >
     <!-- Header / Navigation -->
     <header
-      class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300"
+      class="sticky top-0 z-50 bg-white backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300"
     >
       <div
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
       >
         <!-- Brand Logo -->
-        <a href="#" class="w-1/5 items-center gap-3 group focus:outline-none">
+        <a href="#" class="items-center gap-3 group focus:outline-none">
           <!-- SVG recreation of uploaded Nearhelpers circular logo -->
           <img
             src="./assets/logo-horizontal-blue.png"
             alt="Nearhelpers Logo"
-            class="w-full max-w-52"
+            class="w-52"
           />
         </a>
 
@@ -89,7 +89,7 @@
         <div class="hidden md:flex items-center gap-3">
           <button
             onclick="openBookingModal('General Enquiry')"
-            class="px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-300 to-emerald-400 hover:from-emerald-400 hover:to-emerald-500 text-white font-semibold shadow-md shadow-emerald-300/25 text-sm transition-all hover:shadow-lg hover:-translate-y-0.5"
+            class="px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-semibold shadow-md shadow-emerald-300/25 text-sm transition-all hover:shadow-lg hover:-translate-y-0.5"
           >
             Book Now
           </button>
@@ -99,7 +99,7 @@
         <div class="flex md:hidden items-center gap-2">
           <button
             onclick="openBookingModal()"
-            class="px-3 py-1.5 rounded-full bg-amber-500 text-white text-xs font-bold"
+            class="px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-semibold shadow-md shadow-emerald-300/25 text-sm transition-all hover:shadow-lg hover:-translate-y-0.5"
           >
             Book Now
           </button>
@@ -165,39 +165,36 @@
     <!-- Hero Section -->
     <section
       id="home"
-      class="relative pt-8 pb-8 md:pt-14 md:pb-8 overflow-hidden bg-gradient-to-b from-blue-50/70 via-white to-white"
+      class="relative pt-20 pb-20 md:pt-20 md:pb-20 overflow-hidden bg-gradient-to-r from-[#0c5982] via-[#0268a6] to-[#0277fa]"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Top Pill Tagline -->
-        <div class="flex justify-center md:justify-start mb-6">
-          <span
-            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100/80 border border-blue-200 text-brand-700 text-xs sm:text-sm font-bold tracking-wide"
-          >
-            <i class="fa-solid fa-heart-circle-check text-brand-600"></i>
-            Your needs, your neighbours, trusted help
-          </span>
-        </div>
-
         <div
           class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center"
         >
           <!-- Left Content -->
           <div class="lg:col-span-7 text-center md:text-left space-y-6">
+            <!-- Top Pill Tagline -->
+            <div class="flex justify-center md:justify-start mb-6">
+              <span
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-blue-200 text-xs sm:text-sm font-bold tracking-wide"
+              >
+                <i class="fa-solid fa-heart-circle-check text-blue-200"></i>
+                Your needs, your neighbours, trusted help
+              </span>
+            </div>
             <h1
-              class="text-3xl sm:text-5xl lg:text-[54px] font-extrabold text-slate-900 tracking-tight leading-[1.18]"
+              class="text-3xl sm:text-5xl lg:text-[54px] font-extrabold text-blue-200 tracking-tight leading-[1.18]"
             >
               With you in
-              <span class="text-brand-600">Adoor</span>, for anything you need!
+              <span class="text-white">Adoor</span>, for anything you need!
             </h1>
 
             <p
-              class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal"
+              class="text-base sm:text-lg text-white leading-relaxed max-w-2xl font-normal"
             >
               Too busy to handle things at home? Worried about your parents back
               home while you're abroad?
-              <span class="font-semibold text-slate-800"
-                >Don't worry anymore.</span
-              >
+              <span class="font-semibold text-white">Don't worry anymore.</span>
               Our trusted local helpers are right by your side.
             </p>
 
@@ -210,7 +207,7 @@
                 target="_blank"
                 class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-base shadow-lg shadow-brand-600/30 flex items-center justify-center gap-2.5 transition-all hover:-translate-y-0.5"
               >
-                <i class="fa-brands fa-whatsapp text-xl text-emerald-300"></i>
+                <i class="fa-brands fa-whatsapp text-xl text-white"></i>
                 Book on WhatsApp
               </a>
 
@@ -225,7 +222,7 @@
 
             <!-- Micro Trust indicators -->
             <div
-              class="pt-4 flex flex-wrap items-center justify-center md:justify-start gap-5 text-xs sm:text-sm text-slate-500 font-medium"
+              class="pt-4 flex flex-wrap items-center justify-center md:justify-start gap-5 text-xs sm:text-sm text-white font-medium"
             >
               <div class="flex items-center gap-2">
                 <i class="fa-solid fa-circle-check text-emerald-500"></i>
@@ -233,7 +230,7 @@
               </div>
               <div class="flex items-center gap-2">
                 <i class="fa-solid fa-circle-check text-emerald-500"></i>
-                <span>Live Photo & GPS Updates</span>
+                <span>Live Photo &amp; GPS Updates</span>
               </div>
               <div class="flex items-center gap-2">
                 <i class="fa-solid fa-circle-check text-emerald-500"></i>
@@ -252,7 +249,7 @@
                 class="relative rounded-2xl overflow-hidden bg-white shadow-inner aspect-[4/3] sm:aspect-[16/11]"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=900&q=80"
+                  src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
                   alt="Caregiver companion assisting elderly family members at home in Kerala"
                   class="w-full h-full object-cover"
                   onerror="
@@ -293,7 +290,7 @@
 
               <!-- Floating NRI Peace-of-Mind Pill -->
               <div
-                class="absolute top-0 right-1 bg-white px-4 py-2 rounded-2xl shadow-xl border border-blue-100 flex items-center gap-2 pulse-soft"
+                class="absolute top-4 right-4 bg-white/85 px-4 py-2 rounded-2xl shadow-xl border border-blue-100 flex items-center gap-2 pulse-soft"
               >
                 <span
                   class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"
@@ -692,7 +689,7 @@
                 <a
                   href="https://wa.me/919633453183?text=Hello%20Nearhelpers,%20I%20want%20to%20book%20a%20helper%20in%20Adoor."
                   target="_blank"
-                  class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-emerald-300 to-emerald-400 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold text-sm shadow-lg shadow-black/20 hover:scale-105 transition-all"
+                  class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-white font-bold text-sm shadow-lg shadow-black/20 hover:scale-105 transition-all"
                 >
                   <i class="fa-brands fa-whatsapp text-lg"></i>
                   Book on WhatsApp
